@@ -3,10 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_home__1_.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_home__2_.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_home__3_.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_let_s_explore_the_solar_system_with_explorer.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_rectangle_1.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_rectangle_3.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_rectangle_3_2x.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_rocket_1.xml" value="0.245" />
+        <entry key="app/src/main/res/drawable/ic_started_background.xml" value="0.218" />
+        <entry key="app/src/main/res/layout-v28/fragment_start.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3619791666666667" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/fragment_start.xml" value="0.3619791666666667" />
+        <entry key="app/src/main/res/layout/fragment_start.xml" value="0.30464135021097044" />
       </map>
     </option>
   </component>
