@@ -14,22 +14,7 @@
         tools:context=".ui.StartFragment">
 
 
-        <TextView
-            android:id="@+id/explorer"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_33sdp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:gravity="center"
-            android:text="@string/mars_real_estate"
-            android:textColor="#F9AD1A"
-            android:textSize="@dimen/_24ssp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
+    <ImageView
             android:id="@+id/astronomer_"
             android:layout_width="match_parent"
             android:layout_height="345dp"
@@ -67,7 +52,6 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:text="@string/let_s_go"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/astronomer_">
 
