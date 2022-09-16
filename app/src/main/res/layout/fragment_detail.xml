@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/ic_feed_background"
-        tools:context=".ui.DetailFragment">
+        tools:context=".view.DetailFragment">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/detailImageView"
@@ -41,7 +41,6 @@
             android:layout_marginEnd="@dimen/_23sdp"
             android:background="#141414"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toBo="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/detailImageView" />
 

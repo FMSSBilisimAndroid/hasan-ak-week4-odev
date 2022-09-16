@@ -1,10 +1,11 @@
-package com.hasan.retrofitapp.ui
+package com.hasan.retrofitapp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.hasan.retrofitapp.databinding.FragmentStartBinding
 
 class StartFragment : Fragment() {
@@ -18,5 +19,14 @@ class StartFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentStartBinding.inflate(inflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.letsGoButton.setOnClickListener {
+          val action = StartFragmentDirections.actionStartFragmentToFeedFragment()
+          Navigation.findNavController(it).navigate(action)
+        }
     }
 }

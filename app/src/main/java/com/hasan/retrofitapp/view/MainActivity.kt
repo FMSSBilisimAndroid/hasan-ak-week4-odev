@@ -1,8 +1,7 @@
-package com.hasan.retrofitapp.ui
+package com.hasan.retrofitapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.hasan.retrofitapp.R
 import com.hasan.retrofitapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

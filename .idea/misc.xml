@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.254" />
         <entry key="app/src/main/res/drawable/ic_feed_background.xml" value="0.254" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.218" />
         <entry key="app/src/main/res/drawable/ic_home__1_.xml" value="0.218" />
         <entry key="app/src/main/res/drawable/ic_home__2_.xml" value="0.218" />
         <entry key="app/src/main/res/drawable/ic_home__3_.xml" value="0.218" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.254" />
         <entry key="app/src/main/res/drawable/ic_let_s_explore_the_solar_system_with_explorer.xml" value="0.218" />
         <entry key="app/src/main/res/drawable/ic_plot_2.xml" value="0.254" />
         <entry key="app/src/main/res/drawable/ic_rectangle_1.xml" value="0.218" />
@@ -26,7 +28,7 @@
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/fragment_start.xml" value="0.30464135021097044" />
-        <entry key="app/src/main/res/layout/recycler_row_item.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/recycler_row_item.xml" value="0.30867892261650276" />
       </map>
     </option>
   </component>

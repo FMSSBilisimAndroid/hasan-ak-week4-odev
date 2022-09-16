@@ -1,4 +1,4 @@
-package com.hasan.retrofitapp.ui
+package com.hasan.retrofitapp.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
