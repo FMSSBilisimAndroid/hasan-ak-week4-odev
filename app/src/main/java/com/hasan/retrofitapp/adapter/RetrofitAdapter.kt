@@ -1,21 +1,18 @@
 package com.hasan.retrofitapp.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.hasan.retrofitapp.R
 import com.hasan.retrofitapp.databinding.RecyclerRowItemBinding
 import com.hasan.retrofitapp.model.Model
-import com.hasan.retrofitapp.util.downloadFromUrl
-import com.hasan.retrofitapp.util.placeholderProgressBar
 import com.hasan.retrofitapp.view.FeedFragmentDirections
+import kotlinx.android.synthetic.main.recycler_row_item.view.*
 
-
-
-class RetrofitAdapter(val modelList: ArrayList<Model>): RecyclerView.Adapter<RetrofitAdapter.RetrofitViewHolder>(){
+class RetrofitAdapter(val modelList: ArrayList<Model>): RecyclerView.Adapter<RetrofitAdapter.RetrofitViewHolder>(),RecyclerItemClickListener{
 
     class RetrofitViewHolder(val binding:RecyclerRowItemBinding):RecyclerView.ViewHolder(binding.root) {
 
@@ -28,26 +25,37 @@ class RetrofitAdapter(val modelList: ArrayList<Model>): RecyclerView.Adapter<Ret
     }
 
     override fun onBindViewHolder(holder: RetrofitViewHolder, position: Int) {
-        /*holder.binding.itemRowImage.downloadFromUrl(modelList[position].img_src,
-            placeholderProgressBar(holder.itemView.context))*/
 
         holder.binding.model = modelList[position]
+        holder.binding.clickListener = this
 
-        holder.itemView.setOnClickListener {
+        /*holder.itemView.setOnClickListener {
                val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment()
+               action.filedUuid = modelList[position].id.toInt()
                Navigation.findNavController(it).navigate(action)
-        }
-
-
+        }*/
     }
 
     override fun getItemCount(): Int {
       return  modelList.size
     }
 
-    fun updateCountryList(newCountryList: ArrayList<Model>) {
+    fun updateCountryList(newList: ArrayList<Model>) {
         modelList.clear()
-        modelList.addAll(newCountryList)
+        modelList.addAll(newList)
         notifyDataSetChanged()
     }
+
+    override fun onRecyclerItemClick(v: View) {
+        val uuid = v.fieldUudi.text.toString().toInt()
+        val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment()
+        action.filedUuid = uuid
+        Navigation.findNavController(v).navigate(action)
+
+
+    }
+
+
+
+
 }

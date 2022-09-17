@@ -1,32 +1,35 @@
 package com.hasan.retrofitapp.viewmodel
 
-
+import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.hasan.retrofitapp.database.RetrofitDatabase
+
 import com.hasan.retrofitapp.model.Model
 import com.hasan.retrofitapp.service.RetrofitAPIService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.launch
 
-
-class FeedViewModel : ViewModel() {
+class FeedViewModel(application: Application) : BaseViewModel(application) {
 
     private val retrofitAPIService = RetrofitAPIService()
     private val disposable = CompositeDisposable()
 
     val fieldsMars = MutableLiveData<List<Model>>()
 
-   fun getDataFromApi() {
+    fun getDataFromApi() {
 
         disposable.add(
             retrofitAPIService.getData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<Model>>() {
+
                     override fun onSuccess(t: List<Model>) {
                         fieldsMars.value = t
+                        storeInSQlite(t)
                     }
 
                     override fun onError(e: Throwable) {
@@ -34,6 +37,14 @@ class FeedViewModel : ViewModel() {
                     }
                 })
         )
+    }
+
+    private fun storeInSQlite(list: List<Model>){
+        launch {
+            val dao = RetrofitDatabase(getApplication()).retrofitDao()
+            dao.deleteAllFields()
+            dao.insertAll(*list.toTypedArray())
+        }
     }
 
     override fun onCleared() {

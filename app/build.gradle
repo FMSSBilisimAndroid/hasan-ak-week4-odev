@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs'
+    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
 }
 
@@ -37,10 +38,8 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     def retrofitVersion = '2.9.0'
-
-
+    def room_version = "2.4.3"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
@@ -52,37 +51,35 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
 
     //multi screen size
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
-
-
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
 
-
-    //implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
-    //implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    //RxJava2
     implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
+    //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
     kapt 'com.github.bumptech.glide:compiler:4.13.2'
 
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
-    //implementation 'com.squareup.picasso:picasso:2.8'
-
+    //CardView
     implementation "androidx.cardview:cardview:1.0.0"
 
-
-
-
-
+    //Room
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation("androidx.room:room-ktx:$room_version")
 
 
 }

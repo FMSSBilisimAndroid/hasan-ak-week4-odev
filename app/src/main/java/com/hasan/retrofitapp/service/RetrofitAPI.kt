@@ -1,8 +1,5 @@
 package com.hasan.retrofitapp.service
 
-
-
-
 import com.hasan.retrofitapp.model.Model
 import io.reactivex.Single
 import retrofit2.http.GET

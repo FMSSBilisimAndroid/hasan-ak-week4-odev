@@ -26,5 +26,10 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.hasan.retrofitapp.view.DetailFragment"
-        android:label="DetailFragment" />
+        android:label="DetailFragment" >
+        <argument
+            android:name="filedUuid"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

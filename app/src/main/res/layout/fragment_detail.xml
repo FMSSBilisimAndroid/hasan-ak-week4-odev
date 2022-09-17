@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+         <variable
+             name="selectField"
+             type="com.hasan.retrofitapp.model.Model" />
+
 
     </data>
 
@@ -11,7 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/ic_feed_background"
-        tools:context=".view.DetailFragment">
+        tools:context=".view.DetailFragment"
+
+        >
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/detailImageView"
@@ -22,7 +28,7 @@
             android:layout_marginTop="-24dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/example_image"
+            android:downloadUrl="@{selectField.img_src}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -66,7 +72,7 @@
             android:layout_marginTop="@dimen/_23sdp"
             android:fontFamily="@font/gruppo"
             android:gravity="center_horizontal"
-            android:text="@string/some_id"
+            android:text="@{selectField.id}"
             android:textColor="#7CB342"
             android:textSize="@dimen/_23ssp"
             app:layout_constraintStart_toEndOf="@id/plot_2"
@@ -81,9 +87,9 @@
             android:layout_marginStart="164dp"
             android:layout_marginTop="27dp"
             android:fontFamily="@font/roboto"
-            android:text="@string/_80_00"
+            android:text="@{selectField.price.toString()}"
             android:textColor="#B3A9A9"
-            android:textSize="@dimen/_23ssp"
+            android:textSize="@dimen/_27ssp"
             app:layout_constraintStart_toEndOf="@id/idText"
             app:layout_constraintTop_toBottomOf="@id/line_4">
 
