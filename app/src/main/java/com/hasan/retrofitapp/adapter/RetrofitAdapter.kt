@@ -12,38 +12,33 @@ import com.hasan.retrofitapp.model.Model
 import com.hasan.retrofitapp.view.FeedFragmentDirections
 import kotlinx.android.synthetic.main.recycler_row_item.view.*
 
-class RetrofitAdapter(val modelList: ArrayList<Model>): RecyclerView.Adapter<RetrofitAdapter.RetrofitViewHolder>(),RecyclerItemClickListener{
+class RetrofitAdapter(var modelList: List<Model>) :
+    RecyclerView.Adapter<RetrofitAdapter.RetrofitViewHolder>(), RecyclerItemClickListener {
 
-    class RetrofitViewHolder(val binding:RecyclerRowItemBinding):RecyclerView.ViewHolder(binding.root) {
+    class RetrofitViewHolder(val binding: RecyclerRowItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RetrofitViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = DataBindingUtil.inflate<RecyclerRowItemBinding>(inflater,R.layout.recycler_row_item,parent,false)
-        return  RetrofitViewHolder(binding)
+        val binding = DataBindingUtil.inflate<RecyclerRowItemBinding>(
+            inflater,
+            R.layout.recycler_row_item,
+            parent,
+            false
+        )
+        return RetrofitViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: RetrofitViewHolder, position: Int) {
 
         holder.binding.model = modelList[position]
         holder.binding.clickListener = this
-
-        /*holder.itemView.setOnClickListener {
-               val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment()
-               action.filedUuid = modelList[position].id.toInt()
-               Navigation.findNavController(it).navigate(action)
-        }*/
     }
 
     override fun getItemCount(): Int {
-      return  modelList.size
-    }
-
-    fun updateCountryList(newList: ArrayList<Model>) {
-        modelList.clear()
-        modelList.addAll(newList)
-        notifyDataSetChanged()
+        return modelList.size
     }
 
     override fun onRecyclerItemClick(v: View) {
@@ -51,11 +46,5 @@ class RetrofitAdapter(val modelList: ArrayList<Model>): RecyclerView.Adapter<Ret
         val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment()
         action.filedUuid = uuid
         Navigation.findNavController(v).navigate(action)
-
-
     }
-
-
-
-
 }

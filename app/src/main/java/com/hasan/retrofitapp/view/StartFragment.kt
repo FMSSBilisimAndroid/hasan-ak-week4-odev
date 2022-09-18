@@ -24,9 +24,10 @@ class StartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Clicking the let's button here feed fragment directs.
         binding.letsGoButton.setOnClickListener {
-          val action = StartFragmentDirections.actionStartFragmentToFeedFragment()
-          Navigation.findNavController(it).navigate(action)
+            val action = StartFragmentDirections.actionStartFragmentToFeedFragment()
+            Navigation.findNavController(it).navigate(action)
         }
     }
 }

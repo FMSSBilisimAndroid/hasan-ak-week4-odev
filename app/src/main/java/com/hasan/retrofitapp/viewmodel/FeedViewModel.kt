@@ -3,7 +3,6 @@ package com.hasan.retrofitapp.viewmodel
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.hasan.retrofitapp.database.RetrofitDatabase
-
 import com.hasan.retrofitapp.model.Model
 import com.hasan.retrofitapp.service.RetrofitAPIService
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -19,6 +18,11 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
 
     val fieldsMars = MutableLiveData<List<Model>>()
 
+    /**
+     * This methodWith the help of RxJava2 module,
+     * it gets data from api asynchronously.
+     *
+     */
     fun getDataFromApi() {
 
         disposable.add(
@@ -39,7 +43,12 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
         )
     }
 
-    private fun storeInSQlite(list: List<Model>){
+    /**
+     *This method is from apithe captured dataImports local database.
+     *
+     * @param list is a value for storeInSQlite
+     */
+    private fun storeInSQlite(list: List<Model>) {
         launch {
             val dao = RetrofitDatabase(getApplication()).retrofitDao()
             dao.deleteAllFields()
@@ -47,9 +56,9 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
         }
     }
 
+
     override fun onCleared() {
         super.onCleared()
-
         disposable.clear()
     }
 }

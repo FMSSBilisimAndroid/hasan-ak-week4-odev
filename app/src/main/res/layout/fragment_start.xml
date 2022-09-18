@@ -14,7 +14,7 @@
         tools:context=".view.StartFragment">
 
 
-    <ImageView
+        <ImageView
             android:id="@+id/astronomer_"
             android:layout_width="match_parent"
             android:layout_height="345dp"
@@ -37,12 +37,11 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="240dp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:scaleType="fitCenter"
-            app:layout_constraintStart_toStartOf="@id/letsGoButton"
-            app:layout_constraintTop_toTopOf="@id/letsGoButton"
-            android:src="@drawable/ic_rockek"
             android:elevation="@dimen/_4sdp"
-            />
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_rockek"
+            app:layout_constraintStart_toStartOf="@id/letsGoButton"
+            app:layout_constraintTop_toTopOf="@id/letsGoButton" />
 
         <Button
             android:id="@+id/letsGoButton"

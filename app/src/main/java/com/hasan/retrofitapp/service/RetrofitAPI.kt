@@ -6,10 +6,11 @@ import retrofit2.http.GET
 
 interface RetrofitAPI {
 
-    //https://mars.udacity.com/realestate
-    //BASE_URL -> https://mars.udacity.com/
-    //EXT -> realestate
-
+    /**
+     * Gets data from API.
+     *
+     * @return [Single<List<Model>>].
+     */
     @GET("realestate")
-    fun getFieldsMars():Single<List<Model>>
+    fun getFieldsMars(): Single<List<Model>>
 }

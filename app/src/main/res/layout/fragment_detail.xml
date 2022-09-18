@@ -4,37 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-         <variable
-             name="selectField"
-             type="com.hasan.retrofitapp.model.Model" />
 
-
+        <variable
+            name="selectField"
+            type="com.hasan.retrofitapp.model.Model" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/ic_feed_background"
-        tools:context=".view.DetailFragment"
-
-        >
+        tools:context=".view.DetailFragment">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/detailImageView"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/_320sdp"
             android:layout_height="@dimen/_400sdp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="1dp"
             android:layout_marginTop="-24dp"
+            android:layout_marginEnd="3dp"
             android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
             android:downloadUrl="@{selectField.img_src}"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearance="@style/CornerCut">
+            app:shapeAppearance="@style/CornerCut"
 
-        </com.google.android.material.imageview.ShapeableImageView>
+            />
 
         <ImageView
             android:id="@+id/line_4"
@@ -56,8 +55,8 @@
             android:layout_height="33dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_22sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_54sdp"
             android:src="@drawable/outline_share_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line_4" />
@@ -69,7 +68,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="@dimen/_6sdp"
-            android:layout_marginTop="@dimen/_23sdp"
+            android:layout_marginTop="@dimen/_54sdp"
             android:fontFamily="@font/gruppo"
             android:gravity="center_horizontal"
             android:text="@{selectField.id}"
@@ -84,32 +83,27 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="164dp"
-            android:layout_marginTop="27dp"
+            android:layout_marginStart="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_54sdp"
             android:fontFamily="@font/roboto"
-            android:text="@{selectField.price.toString()}"
+            android:text="@{selectField.price.toString()+'$'}"
             android:textColor="#B3A9A9"
-            android:textSize="@dimen/_27ssp"
-            app:layout_constraintStart_toEndOf="@id/idText"
-            app:layout_constraintTop_toBottomOf="@id/line_4">
-
-        </TextView>
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_4" />
 
         <Button
             android:id="@+id/buyNowButton"
-            android:layout_width="@dimen/_120sdp"
+            android:layout_width="@dimen/_110sdp"
             android:layout_height="wrap_content"
             android:layout_marginTop="75dp"
             android:backgroundTint="#FB8C00"
-            android:text="@string/buy_now"
-            android:textAlignment="textEnd"
-            android:textAllCaps="false"
+            android:text="@{selectField.type}"
+            android:textAlignment="center"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/idText">
-
-        </Button>
+            app:layout_constraintTop_toBottomOf="@id/idText" />
 
         <ImageView
             android:layout_width="@dimen/_20sdp"
@@ -120,10 +114,7 @@
             android:src="@drawable/outline_shopping_cart_24"
             app:layout_constraintBottom_toBottomOf="@+id/buyNowButton"
             app:layout_constraintStart_toStartOf="@+id/buyNowButton"
-
-            app:layout_constraintTop_toTopOf="@+id/buyNowButton">
-
-        </ImageView>
+            app:layout_constraintTop_toTopOf="@+id/buyNowButton" />
 
         <ImageButton
             android:id="@+id/detailBackButton"
@@ -134,10 +125,7 @@
             android:background="@android:color/transparent"
             android:src="@drawable/outline_reply_all_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
